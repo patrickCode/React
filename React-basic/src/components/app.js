@@ -1,9 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import HomePage from './homePage';
-import About from './about/about';
-import Books from './books/books'
-import Header from './common/header';
+import { Router, Route, IndexRoute, IndexLink, Link, hashHistory } from 'react-router';
 
 class App extends Component {
     constructor() {
@@ -11,20 +8,11 @@ class App extends Component {
     }
 
     render() {
-        console.log("Re-routing to "+this.props.route);
-        var CurrentComponent;
 
-        switch (this.props.route) {
-            case 'about': CurrentComponent = About;
-                break;
-            case 'books': CurrentComponent = Books;
-                break;
-            default: CurrentComponent = HomePage;
-        }
         return (
             <div>
-                <Header />
-                <CurrentComponent />
+                <Header/>
+                {this.props.children}
             </div>
         );
     }
