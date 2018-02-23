@@ -1,4 +1,3 @@
-import BookApi from '../../../mockapi/bookProxy'
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 
@@ -6,19 +5,23 @@ class MyBooksList extends Component {
     constructor() {
         super();
         
+        /* Below is needed when the properties are not passed from parent component
         //same as getInitialState
-        this.state = {
-            books: []
-        };
+        // this.state = {
+        //     books: []
+        // };
+        */
     }
 
+    /* Below is needed when the properties are not passed from parent component
     //Called whent the component is rendering for the 1st time
     componentWillMount() {
         this.setState({
             books: BookApi.getAllBooks()
         });
     }
-
+    */
+    
     createBookRow(book) {
         return(
             <tr key={book.id}>
@@ -37,9 +40,6 @@ class MyBooksList extends Component {
         //var createUserRow = this.createUserRow; 
 
         return(
-            <div>
-                <h1>My Books</h1>
-
                 <table className="table table-hover table-striped">
                     <thead>
                         <tr>
@@ -51,8 +51,11 @@ class MyBooksList extends Component {
                     </thead>
                     <tbody>
                         {/* Map is a JavaScript function which will call the createUserRow method for every books object */}
-                        {this.state.books.map(this.createBookRow, this)} 
+                        {this.props.books.map(this.createBookRow, this)} 
 
+                        {/* The below is called when books is a state of the component and there are no parent components. Parent component will pass books as props to this compoennt */}
+                        {/* {this.state.books.map(this.createBookRow, this)}  */}
+                        
                         {/* Inline implementation withour calling a method */}
                         {/* {this.state.books.map(book => 
                             { return(
@@ -64,7 +67,6 @@ class MyBooksList extends Component {
                                 )})}  */}
                     </tbody>
                 </table>
-            </div>
         );
     }
 }

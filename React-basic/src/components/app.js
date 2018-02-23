@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import HomePage from './homePage';
 import About from './about/about';
-import MyBooksList from './books/myBooksList'
+import Books from './books/books'
 import Header from './common/header';
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
         switch (this.props.route) {
             case 'about': CurrentComponent = About;
                 break;
-            case 'mybooks': CurrentComponent = MyBooksList;
+            case 'books': CurrentComponent = Books;
                 break;
             default: CurrentComponent = HomePage;
         }
