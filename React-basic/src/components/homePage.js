@@ -9,7 +9,7 @@ class HomePage extends Component {
     render(){
         return (
             <div className="jumbotron">
-                <h1>React POC</h1>
+                <h1>Library</h1>
                 <p>POC for using React, Flux and Webpack</p>
             </div>
         );

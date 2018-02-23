@@ -18,6 +18,7 @@ class About extends Component {
                         <li>Flux</li>
                         <li>Webpack</li>
                         <li>Babel</li>
+                        <li>ES 6</li>
                     </ul>
                 </div>
             </div>

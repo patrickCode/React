@@ -12,6 +12,7 @@ class Header extends Component {
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
                         <li><a href="/">Home</a></li>
+                        <li><a href="/#mybooks">My Books</a></li>
                         <li><a href="/#about">About</a></li>
                     </ul>
                 </div>
