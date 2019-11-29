@@ -69,14 +69,13 @@ const publishers = (state = bookStore.publishers, action) => {
     return state;
 }
 
-const routes = (state = bookStore.routes, action) => {
-    return state;
-}
+const routes = (state = bookStore.routes, action) => state;
 
 const currentRoute = (state = bookStore.currentRoute, action) => {
     switch (action.type) {
         case 'CHANGE_ROUTE': {
-            const routes = ['publisher', 'book', 'author', 'magazine'];
+            // const routes = ['publisher', 'book', 'author', 'magazine'];
+            const routes = Object.keys(bookStore.routes);
             const newRoute = action.payload;
             const splittedRoutes = newRoute.split("/");
             let newRouteObj = [];
